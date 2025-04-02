@@ -43,6 +43,7 @@ export class HorariosFormComponent {
   mes: number = 0;
   ano: number = 0;
   hora: number = 0;
+  consultaAtendimento: number = 0;
 
   ngOnInit(): void {
     this.loadClients();
@@ -63,6 +64,7 @@ export class HorariosFormComponent {
 
   onSubmit(_: NgForm) {
     this.consulta.dataConsulta = `${this.ano}-${this.mes < 10 ? '0' + this.mes : this.mes}-${this.dia < 10 ? '0' + this.dia : this.dia}T${this.hora}:00Z`;
+    this.consulta.consultaId = this.consultaAtendimento;
     this.consultaSubmited.emit(this.consulta);
     this.router.navigate(['/menu']);
   }

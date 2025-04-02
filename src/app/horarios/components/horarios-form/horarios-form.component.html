@@ -3,7 +3,7 @@
     <h2>Agendar Consulta</h2>
 
     <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="consulta-form">
-       <!-- Campo para o Dia -->
+
        <mat-form-field appearance="outline" class="full-width">
         <mat-label>Dia</mat-label>
         <mat-select [(ngModel)]="dia" name="dia" required>
@@ -42,7 +42,6 @@
         <mat-error *ngIf="!dia">Informe um dia válido</mat-error>
       </mat-form-field>
 
-      <!-- Campo para o Mês -->
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Mês</mat-label>
         <mat-select [(ngModel)]="mes" name="mes" required>
@@ -62,7 +61,7 @@
         <mat-error *ngIf="!mes">Informe um mês válido</mat-error>
       </mat-form-field>
 
-      <!-- Campo para o Ano -->
+
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Ano</mat-label>
         <mat-select [(ngModel)]="ano" name="ano" required>
@@ -112,9 +111,15 @@
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="full-width">
-        <mat-label>ID da Consulta</mat-label>
-        <input matInput type="number" name="consultaId" [(ngModel)]="consulta.consultaId" required>
+        <mat-label>Consulta</mat-label>
+        <mat-select [(ngModel)]="consultaAtendimento" name="consultaAtendimento" required>
+          <mat-option value="1">Oftalmologista</mat-option>
+          <mat-option value="2">Clínico geral</mat-option>
+          <mat-option value="3">Nutricionista</mat-option>
+        </mat-select>
+        <mat-error *ngIf="!consultaAtendimento">Informe uma consulta valida</mat-error>
       </mat-form-field>
+
 
       <button mat-raised-button color="primary" class="full-width" type="submit" [disabled]="form.invalid">
         Agendar Consulta

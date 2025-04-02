@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-card-menu',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './card-menu.component.html',
   styleUrl: './card-menu.component.scss'
 })
