@@ -1,0 +1,146 @@
+<div class="consulta-container">
+  <div class="consulta-card">
+    <h2>Agendar Consulta</h2>
+
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="consulta-form">
+       <!-- Campo para o Dia -->
+       <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Dia</mat-label>
+        <mat-select [(ngModel)]="dia" name="dia" required>
+          <mat-option value="1">1</mat-option>
+          <mat-option value="2">2</mat-option>
+          <mat-option value="3">3</mat-option>
+          <mat-option value="4">4</mat-option>
+          <mat-option value="5">5</mat-option>
+          <mat-option value="6">6</mat-option>
+          <mat-option value="7">7</mat-option>
+          <mat-option value="8">8</mat-option>
+          <mat-option value="9">9</mat-option>
+          <mat-option value="10">10</mat-option>
+          <mat-option value="11">11</mat-option>
+          <mat-option value="12">12</mat-option>
+          <mat-option value="13">13</mat-option>
+          <mat-option value="14">14</mat-option>
+          <mat-option value="15">15</mat-option>
+          <mat-option value="16">16</mat-option>
+          <mat-option value="17">17</mat-option>
+          <mat-option value="18">18</mat-option>
+          <mat-option value="19">19</mat-option>
+          <mat-option value="20">20</mat-option>
+          <mat-option value="21">21</mat-option>
+          <mat-option value="22">22</mat-option>
+          <mat-option value="23">23</mat-option>
+          <mat-option value="24">24</mat-option>
+          <mat-option value="25">25</mat-option>
+          <mat-option value="26">26</mat-option>
+          <mat-option value="27">27</mat-option>
+          <mat-option value="28">28</mat-option>
+          <mat-option value="29">29</mat-option>
+          <mat-option value="30">30</mat-option>
+          <mat-option value="31">31</mat-option>
+        </mat-select>
+        <mat-error *ngIf="!dia">Informe um dia válido</mat-error>
+      </mat-form-field>
+
+      <!-- Campo para o Mês -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Mês</mat-label>
+        <mat-select [(ngModel)]="mes" name="mes" required>
+          <mat-option value="1">Janeiro</mat-option>
+          <mat-option value="2">Fevereiro</mat-option>
+          <mat-option value="3">Março</mat-option>
+          <mat-option value="4">Abril</mat-option>
+          <mat-option value="5">Maio</mat-option>
+          <mat-option value="6">Junho</mat-option>
+          <mat-option value="7">Julho</mat-option>
+          <mat-option value="8">Agosto</mat-option>
+          <mat-option value="9">Setembro</mat-option>
+          <mat-option value="10">Outubro</mat-option>
+          <mat-option value="11">Novembro</mat-option>
+          <mat-option value="12">Dezembro</mat-option>
+        </mat-select>
+        <mat-error *ngIf="!mes">Informe um mês válido</mat-error>
+      </mat-form-field>
+
+      <!-- Campo para o Ano -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Ano</mat-label>
+        <mat-select [(ngModel)]="ano" name="ano" required>
+          <mat-option value="2025">2025</mat-option>
+          <mat-option value="2026">2026</mat-option>
+          <mat-option value="2027">2027</mat-option>
+          <mat-option value="2028">2028</mat-option>
+          <mat-option value="2029">2029</mat-option>
+          <mat-option value="2030">2030</mat-option>
+        </mat-select>
+        <mat-error *ngIf="!ano">Informe um ano válido</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Hora</mat-label>
+        <mat-select [(ngModel)]="hora" name="hora" required>
+          <mat-option value="01">01:00</mat-option>
+          <mat-option value="02">02:00</mat-option>
+          <mat-option value="03">03:00</mat-option>
+          <mat-option value="04">04:00</mat-option>
+          <mat-option value="05">05:00</mat-option>
+          <mat-option value="06">06:00</mat-option>
+          <mat-option value="07">07:00</mat-option>
+          <mat-option value="08">08:00</mat-option>
+          <mat-option value="09">09:00</mat-option>
+          <mat-option value="10">10:00</mat-option>
+          <mat-option value="11">11:00</mat-option>
+          <mat-option value="12">12:00</mat-option>
+          <mat-option value="13">13:00</mat-option>
+          <mat-option value="14">14:00</mat-option>
+          <mat-option value="15">15:00</mat-option>
+          <mat-option value="16">16:00</mat-option>
+          <mat-option value="17">17:00</mat-option>
+          <mat-option value="18">18:00</mat-option>
+          <mat-option value="19">19:00</mat-option>
+          <mat-option value="20">20:00</mat-option>
+          <mat-option value="21">21:00</mat-option>
+          <mat-option value="22">22:00</mat-option>
+          <mat-option value="23">23:00</mat-option>
+        </mat-select>
+        <mat-error *ngIf="!hora">Informe uma hora válida</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>ID do Cliente</mat-label>
+        <input matInput type="number" name="clientId" [(ngModel)]="consulta.clientId" required readonly>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>ID da Consulta</mat-label>
+        <input matInput type="number" name="consultaId" [(ngModel)]="consulta.consultaId" required>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" class="full-width" type="submit" [disabled]="form.invalid">
+        Agendar Consulta
+      </button>
+    </form>
+
+
+  </div>
+
+  <button mat-raised-button color="accent" class="toggle-button" (click)="toggleUsers()">
+    {{ showUsers ? 'Esconder Usuários' : 'Mostrar Usuários' }}
+  </button>
+
+  <div class="clients-container" *ngIf="showUsers">
+    <h3>Lista de Usuários Cadastrados</h3>
+    <div class="clients-grid">
+      <div class="client-card" *ngFor="let client of clients">
+        <h4>{{ client.name }}</h4>
+        <p><strong>Email:</strong> {{ client.email }}</p>
+        <p><strong>Telefone:</strong> {{ client.phone }}</p>
+        <p><strong>CPF:</strong> {{ client.cpf }}</p>
+
+        <button mat-raised-button color="primary" (click)="selectUser(client)">
+          Selecionar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

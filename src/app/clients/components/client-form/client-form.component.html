@@ -1,0 +1,53 @@
+<div class="register-container">
+  <div class="register-card">
+    <h2>Create Your Account</h2>
+
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="register-form">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Nome</mat-label>
+        <input matInput name="name" id="name" #nameModel="ngModel" [(ngModel)]="client.name" required>
+        <mat-error *ngIf="nameModel.invalid && nameModel.touched">Informe o nome do cliente</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>E-mail</mat-label>
+        <input matInput name="email" id="email" #emailModel="ngModel" [(ngModel)]="client.email" required email>
+        <mat-error *ngIf="emailModel.invalid && emailModel.touched">Informe um e-mail válido</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Senha</mat-label>
+        <input matInput type="password" name="password" id="password" #passwordModel="ngModel" [(ngModel)]="client.password" required>
+        <mat-error *ngIf="passwordModel.invalid && passwordModel.touched">Informe uma senha válida</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Celular</mat-label>
+        <input matInput name="phone" id="phone" #phoneModel="ngModel" [(ngModel)]="client.phone" required mask="(00) 00000-0000">
+        <mat-error *ngIf="phoneModel.invalid && phoneModel.touched">Informe um celular válido</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>CPF</mat-label>
+        <input matInput name="cpf" id="cpf" #cpfModel="ngModel" [(ngModel)]="client.cpf" required mask="00000000000">
+        <mat-error *ngIf="cpfModel.invalid && cpfModel.touched">Informe um CPF válido</mat-error>
+      </mat-form-field>
+
+
+
+      <button mat-raised-button color="primary" class="full-width" type="submit" [disabled]="form.invalid">
+        Cadastrar
+      </button>
+
+      <div class="separator">OU</div>
+
+      <button mat-stroked-button color="primary" class="full-width" (click)="navigateToLogin()">
+        Login Now
+      </button>
+    </form>
+  </div>
+
+  <div class="image-container">
+    <img src="https://smetal.org.br/wp-content/uploads/2024/04/internasaudeOMS-1016x762.png" alt="Health Illustration">
+  </div>
+</div>
